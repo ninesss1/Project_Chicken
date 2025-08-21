@@ -1,10 +1,10 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./compose/home.jsx";
-import SetChicken from "./compose/setChicken.jsx";
-import ChickenFry from "./compose/chicken_fry.jsx";
-import AboutChicken from "./compose/aboutChicken.jsx";
-import Contact from "./compose/contact.jsx";
+// import SetChicken from "./compose/setChicken.jsx";
+// import ChickenFry from "./compose/chicken_fry.jsx";
+// import AboutChicken from "./compose/aboutChicken.jsx";
+// import Contact from "./compose/contact.jsx";
 
 function BottomNav() {
   return (
