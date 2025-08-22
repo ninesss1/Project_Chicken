@@ -1,212 +1,201 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* พื้นหลังธีมไก่ทอด */
+.chicken-theme-bg {
+  background: #fff;
+  min-height: 100vh;
+  font-family: 'Kanit', 'Prompt', 'Mali', 'Sriracha', 'Arial', sans-serif;
 }
 
-body {
-  font-family: "Kanit", "Arial", sans-serif;
-  background: #f8fafc;
-  color: #222;
+/* Header */
+.chicken-theme-header {
+  background: #ffecb3;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.15);
+  border-bottom: 3px solid #ffb300;
+  padding-bottom: 0.5rem;
 }
 
-header {
-  background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  padding-bottom: 8px;
-}
-
-.navbar {
+.chicken-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d2691e;
+  letter-spacing: 2px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: transparent;
-  padding: 14px 36px;
-  font-family: inherit;
+  gap: 0.5rem;
 }
 
-.logo {
-  font-size: 1.7rem;
-  font-weight: bold;
-  color: #ff7e5f;
-  letter-spacing: 1px;
-  text-shadow: 1px 2px 8px #fff3;
-  transition: color 0.2s;
-}
-
-.logo:hover {
-  color: #feb47b;
-}
-
-.nav-links {
-  list-style: none;
+.navbar-container {
   display: flex;
-  gap: 32px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
 }
 
-.nav-links li {
-  transition: transform 0.15s;
-  display: inline-block;
-  text-align: auto;
-  font-size: 50px;
+.navbar .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.nav-links li:hover {
-  transform: translateY(-2px) scale(1.08);
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.08rem;
+.navbar .nav-link {
+  color: #b26a00;
   font-weight: 500;
-  padding: 6px 18px;
-  border-radius: 20px;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 18px;
   transition: background 0.2s, color 0.2s;
 }
 
-.nav-links a:hover {
-  background: #ffb88c;
+.navbar .nav-link:hover {
+  background: #ffd54f;
   color: #fff;
-  box-shadow: 0 2px 8px #ffb88c44;
 }
 
-.search {
+/* Search */
+.chicken-search {
+  width: 100%;
   display: flex;
-  align-items: center;
-  border: 1px solid #ffb88c;
+  justify-content: center;
+}
+
+.chicken-search input {
+  width: 420px;
+  max-width: 90vw;
+  border: 2px solid #ffb300;
   border-radius: 20px;
-  background: #fff;
-  padding: 2px 12px 2px 8px;
-  margin-left: 24px;
-  box-shadow: 0 1px 6px #ffb88c22;
-  transition: box-shadow 0.2s;
-}
-
-.search:focus-within {
-  box-shadow: 0 2px 12px #ffb88c55;
-  border-color: #ff7e5f;
-}
-
-.search input {
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 8px 8px 8px 4px;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
   font-size: 1rem;
-  min-width: 120px;
-  color: #333;
+  background: #fffde7;
+  outline: none;
+  transition: border 0.2s, width 0.2s;
 }
 
-.search input::placeholder {
-  color: #ffb88c;
-  opacity: 1;
-  font-style: italic;
+.chicken-search input:focus {
+  border: 2px solid #ff9800;
 }
 
-.search-icon {
+.chicken-search .search-icon {
+  margin-left: -2rem;
+  color: #ff9800;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .chicken-search input {
+    width: 320px;
+    max-width: 98vw;
+    font-size: 0.97rem;
+    padding: 0.45rem 2.2rem 0.45rem 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chicken-search input {
+    width: 95vw;
+    max-width: 99vw;
+    font-size: 0.95rem;
+    padding: 0.4rem 2rem 0.4rem 0.8rem;
+  }
+}
+
+/* Main */
+.chicken-theme-main {
+  padding: 2rem 1rem 4rem 1rem;
+}
+
+/* Bottom Navigation */
+.chicken-theme-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: #ffb300;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  margin-left: 4px;
-  color: #ff7e5f;
-  cursor: pointer;
-  transition: color 0.2s;
+  box-shadow: 0 -2px 12px rgba(255, 193, 7, 0.18);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  z-index: 100;
+  padding: 0.3rem 0;
 }
 
-.search-icon:hover {
-  color: #feb47b;
+.chicken-theme-nav .nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  transition: background 0.18s, color 0.18s;
 }
 
-.bottom-nav {
-  display: none;
+.chicken-theme-nav .nav-btn:hover {
+  background: #fff8e1;
+  color: #ff9800;
 }
 
-@media (max-width: 700px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 10px;
-    display: none;
-  }
-  .nav-links {
-    gap: 12px;
-    margin-top: 10px;
-  }
-  .logo {
-    font-size: 1.2rem;
-  }
-  .nav-links {
-    display: flex;
-    gap: 12px;
-    font-size: 1.2rem;
-  }
+.chicken-theme-nav .nav-label {
+  font-size: 0.85rem;
+  margin-top: 0.1rem;
+  font-family: 'Prompt', 'Mali', sans-serif;
+}
 
-  .icon {
-    cursor: pointer;
+/* Responsive */
+@media (max-width: 1024px) {
+  .navbar-container {
+    max-width: 100vw;
+    padding: 0.5rem 0.7rem;
   }
-
-  .search {
-    display: flex;
-    align-items: center;
-    border: 1px solid #000000;
-    border-radius: 20px;
-    overflow: hidden;
+  .chicken-logo {
+    font-size: 1.4rem;
   }
-
-  .search input {
-    border: none;
-    outline: none;
-    padding: 8px 12px;
-    font-size: 1rem;
+  .navbar .nav-links {
+    gap: 1rem;
   }
-
-  .search input::placeholder {
-    color: #aaa;
+  .chicken-search input {
+    font-size: 0.97rem;
+    padding: 0.45rem 2.2rem 0.45rem 0.9rem;
   }
+}
 
-  .search input[type="text"] {
-    background: url("./search-icon.svg") no-repeat 12px center;
-    padding-left: 40px;
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
   }
-
-  .bottom-nav {
-    display: flex;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 100;
-    background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
-    box-shadow: 0 -2px 12px #ffb88c44;
-    justify-content: space-around;
-    align-items: center;
-    padding: 6px 0 4px 0;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+  .chicken-theme-main {
+    padding: 1rem 0.3rem 5rem 0.3rem;
   }
-
-  .bottom-nav a {
-    flex: 1;
-    text-align: center;
-    color: #ff7e5f;
-    text-decoration: none;
+  .chicken-search {
+    margin: 0.5rem 0.2rem 0.2rem 0.2rem;
+  }
+  .app-header {
+    padding-bottom: 0.2rem;
+  }
+  .chicken-logo {
     font-size: 1.1rem;
-    padding: 4px 0;
-    transition: color 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
   }
+}
 
-  .bottom-nav a:hover,
-  .bottom-nav a:active {
-    color: #feb47b;
+@media (max-width: 480px) {
+  .chicken-search input {
+    font-size: 0.9rem;
+    padding: 0.3rem 1rem 0.3rem 0.7rem;
   }
+  .chicken-theme-main {
+    padding: 0.5rem 0.1rem 5rem 0.1rem;
+  }
+}
 
-  .bottom-nav .nav-label {
-    font-size: 0.85rem;
-    color: #333;
-    margin-top: 2px;
-  }
+/* เพิ่มความน่ารัก */
+.chicken-theme-header, .chicken-theme-nav {
+  font-family: 'Prompt', 'Mali', 'Kanit', cursive, sans-serif;
 }
