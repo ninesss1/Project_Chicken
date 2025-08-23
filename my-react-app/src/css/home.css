@@ -1,0 +1,126 @@
+/* พื้นหลังและขอบ carousel */
+.chicken-carousel-outer {
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0 0 32px 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #fffbe7;
+  position: relative;
+  overflow: hidden;
+}
+
+/* แถว carousel */
+.chicken-carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  gap: 0;
+  padding: 0;
+  width: 100vw;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.chicken-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* รายการแต่ละภาพ */
+.chicken-carousel-item {
+  flex: 0 0 100vw;
+  width: 100vw;
+  max-width: 100vw;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: center;
+  transition: none;
+  margin-bottom: 0;
+  border: none;
+}
+
+/* รูปภาพ */
+.chicken-carousel-img {
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 0;
+  background: #fffbe7;
+  transition: none;
+}
+
+/* จุดบอกตำแหน่ง */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+.carousel-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffe082;
+  border: 2.5px solid #ffb300;
+  cursor: pointer;
+  transition: background 0.18s, border 0.18s, transform 0.18s;
+  display: inline-block;
+  box-shadow: 0 2px 8px #ffb30022;
+}
+.carousel-dot.active {
+  background: #ffb300;
+  border: 2.5px solid #ffb300;
+  transform: scale(1.18);
+  box-shadow: 0 4px 16px #ffb30044;
+}
+.carousel-dot:hover {
+  background: #ffd54f;
+  border-color: #ffb300;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .chicken-carousel-outer {
+    max-width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 0 18px 0;
+  }
+  .chicken-carousel {
+    gap: 0;
+    padding: 0;
+  }
+  .chicken-carousel-item {
+    flex: 0 0 100vw;
+    width: 100vw;
+    max-width: 100vw;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  .chicken-carousel-img {
+    height: 160px;
+    border-radius: 0;
+  }
+  .carousel-dot {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+/* เพิ่มความน่ารัก */
+.chicken-carousel-outer,
+.chicken-carousel-item,
+.carousel-dot {
+  font-family: 'Prompt', 'Kanit', 'Mali', cursive, sans-serif;
+}

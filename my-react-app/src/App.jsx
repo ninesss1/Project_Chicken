@@ -68,7 +68,7 @@ function App() {
           {!useBottomNav && (
             <nav className="navbar hide-on-mobile">
               <div className="navbar-container">
-                <div className="logo chicken-logo">
+                <div className="logo_chicken-logo">
                   <span role="img" aria-label="logo">🍗</span> The Chicken Thief
                 </div>
                 <ul className="nav-links" ref={navLinksRef}>

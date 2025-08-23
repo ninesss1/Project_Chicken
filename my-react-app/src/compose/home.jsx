@@ -1,10 +1,11 @@
 import React, { useRef, useEffect, useState } from "react";
 import "../css/home.css";
 import img_1 from "../assets/fried_1.jpg";
-import img_2 from "../assets/picTest.png"; // ภาพ แสดงทดสอบ
+// import img_2 from "../assets/picTest.png"; // ภาพ แสดงทดสอบ
 
 const Home = () => {
-  const img = [img_1, img_2, img_2, img_2, img_2, img_2];
+  
+  const img = [img_1, img_1, img_1, img_1, img_1, img_1];
   const scrollRef = useRef(null);
   const [current, setCurrent] = useState(0);
 

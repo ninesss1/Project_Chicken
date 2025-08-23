@@ -11,6 +11,7 @@
   box-shadow: 0 2px 8px rgba(255, 193, 7, 0.15);
   border-bottom: 3px solid #ffb300;
   padding-bottom: 0.5rem;
+  justify-self: normal;
 }
 
 .chicken-logo {
@@ -19,8 +20,9 @@
   color: #d2691e;
   letter-spacing: 2px;
   display: flex;
-  align-items: center;
+  align-items: normal;
   gap: 0.5rem;
+  justify-self: normal;
 }
 
 .navbar-container {
@@ -31,11 +33,12 @@
   margin: 0 auto;
   padding: 0.5rem 1.5rem;
   width: 100%;
+  gap: 1.5rem;
 }
 
 .navbar .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -45,16 +48,20 @@
 
 .navbar .nav-link {
   color: #b26a00;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 18px;
   transition: background 0.2s, color 0.2s;
+  font-size: 1.07rem;
+  letter-spacing: 0.01em;
 }
 
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
   background: #ffd54f;
-  color: #fff;
+  color: #ff9800;
+  transform: translateY(-2px) scale(1.07);
 }
 
 /* Search */
@@ -123,7 +130,8 @@
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
   z-index: 100;
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
+  gap: 0.5rem;
 }
 
 .chicken-theme-nav .nav-btn {
@@ -131,22 +139,78 @@
   flex-direction: column;
   align-items: center;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.18rem;
   text-decoration: none;
-  padding: 0.3rem 0.7rem;
-  border-radius: 12px;
-  transition: background 0.18s, color 0.18s;
+  padding: 0.4rem 1.1rem;
+  border-radius: 14px;
+  transition: background 0.18s, color 0.18s, transform 0.15s;
+  gap: 0.18rem;
+  min-width: 56px;
 }
 
-.chicken-theme-nav .nav-btn:hover {
+.chicken-theme-nav .nav-btn span[role="img"] {
+  font-size: 1.55rem;
+  margin-bottom: 0.08rem;
+}
+
+.chicken-theme-nav .nav-btn:hover,
+.chicken-theme-nav .nav-btn.active {
   background: #fff8e1;
   color: #ff9800;
+  transform: translateY(-2px) scale(1.07);
 }
 
 .chicken-theme-nav .nav-label {
-  font-size: 0.85rem;
-  margin-top: 0.1rem;
+  font-size: 0.89rem;
+  margin-top: 0.08rem;
   font-family: 'Prompt', 'Mali', sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+/* ปุ่มลูกศรเลื่อนซ้าย/ขวา */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 179, 0, 0.7);
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, opacity 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  box-shadow: 0 2px 8px #ffb30044;
+  user-select: none;
+}
+.carousel-arrow.left {
+  left: 8px;
+}
+.carousel-arrow.right {
+  right: 8px;
+}
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+.carousel-arrow:hover:not(:disabled) {
+  background: #ffb300;
+  color: #fffde7;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .carousel-arrow {
+    display: none;
+  }
 }
 
 /* Responsive */
@@ -198,4 +262,113 @@
 /* เพิ่มความน่ารัก */
 .chicken-theme-header, .chicken-theme-nav {
   font-family: 'Prompt', 'Mali', 'Kanit', cursive, sans-serif;
+}
+
+
+/* โครงสร้างหลักของ Header */
+.app-header {
+  background: linear-gradient(90deg, #ff914d, #ffcd3c);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar container */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* โลโก้ */
+.logo_chicken-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.logo_chicken-logo:hover {
+  transform: scale(1.05);
+}
+
+/* เมนูนำทาง */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.2);
+  color: #222;
+}
+
+/* Search bar */
+.search-top {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+.chicken-search {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 30px;
+  padding: 0.4rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chicken-search input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+.chicken-search .search-icon {
+  font-size: 1.2rem;
+  color: #ff914d;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.chicken-search .search-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .app-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .chicken-search {
+    max-width: 100%;
+  }
 }
